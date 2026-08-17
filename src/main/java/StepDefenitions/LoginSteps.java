@@ -1,6 +1,5 @@
 package StepDefenitions;
 
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -15,9 +14,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class LoginSteps {
-WebDriver driver;
+public static WebDriver driver;
+    public static WebDriverWait wt;
 
-    WebDriverWait wt;
     @Given("user is already on the login page")
     public void user_is_already_on_the_login_page() {
         // Write code here that turns the phrase above into concrete actions
@@ -34,11 +33,12 @@ WebDriver driver;
        System.out.println(title);
         Assert.assertEquals("FreeCRM", title);
     }
-    @Then("User enters username and password")
-    public void user_enters_username_and_password() {
+    @Then("User enters {string} and {string}")
+    public void user_enters_username_and_password(String Username, String Password) {
         // Write code here that turns the phrase above into concrete actions
-       driver.findElement(By.id("email")).sendKeys("Pradiksh99@gmail.com");
-       driver.findElement(By.id("password")).sendKeys("Pradiksh@99");
+        wt.until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
+       driver.findElement(By.id("email")).sendKeys(Username);
+       driver.findElement(By.id("password")).sendKeys(Password);
     }
     @Then("User clicks on the login button")
     public void user_clicks_on_the_login_button() {
@@ -58,6 +58,11 @@ driver.findElement(By.xpath("//button[text()='Login']")).click();
         String Greeting = Element.getText();
         System.out.println(Greeting);
         Assert.assertEquals("Good morning, coco", Greeting);
+
+    }
+    @Then("Close the browser")
+    public void close_the_browser() {
+        // Write code here that turns the phrase above into concrete actions
         driver.close();
         driver.quit();
     }

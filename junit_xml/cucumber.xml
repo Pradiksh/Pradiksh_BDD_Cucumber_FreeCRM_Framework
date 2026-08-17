@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="7.485" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-08-11T01:12:18.220566500Z">
-<testcase classname="Free CRM Login feature" name="Free CRM Login test Scenario" time="7.316">
+<testsuite name="Cucumber" time="15.044" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-08-17T03:43:47.362607300Z">
+<testcase classname="Free CRM Create Contacts" name="Free CRM Create new Contact Scenario - #1.1" time="8.562">
 <system-out><![CDATA[
 Given user is already on the login page.....................................passed
 When Title off login page is Free CRM.......................................passed
-Then User enters username and password......................................passed
+Then User enters "Pradiksh99@gmail.com" and "Pradiksh@99"...................passed
 Then User clicks on the login button........................................passed
 Then USer lands on homepage of Free CRM.....................................passed
+Then User moves to contact page.............................................passed
+Then User enters "Pradiksh" and "Soman" and "<Position>"....................passed
+Then Close the browser......................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Free CRM Login feature" name="Free CRM Login test Scenario - #1.1" time="6.168">
+<system-out><![CDATA[
+Given user is already on the login page.....................................passed
+When Title off login page is Free CRM.......................................passed
+Then User enters "Pradiksh99@gmail.com" and "Pradiksh@99"...................passed
+Then User clicks on the login button........................................passed
+Then USer lands on homepage of Free CRM.....................................passed
+Then Close the browser......................................................passed
 ]]></system-out>
 </testcase>
 </testsuite>
