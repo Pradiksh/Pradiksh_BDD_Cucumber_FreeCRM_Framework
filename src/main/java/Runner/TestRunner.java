@@ -29,9 +29,8 @@ import org.junit.runner.RunWith;
         ,glue={"StepDefenitions"}
         ,plugin = {"pretty","html:target/cucumber.html","json:json_output/cucumber.json","junit:junit_xml/cucumber.xml"}
         ,dryRun = false
-       // ,strict = true now its removed from cucumber as new cucumber behaves strict by default
         ,monochrome=true//display console output in proper format but in new gen its handled already
-        ,  publish = true
+        ,  publish = false
 )
 public class TestRunner {
 
