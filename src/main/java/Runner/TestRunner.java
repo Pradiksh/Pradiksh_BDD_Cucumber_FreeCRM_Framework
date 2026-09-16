@@ -25,12 +25,13 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "C:\\Users\\Pradiksh Soman\\IdeaProjects\\Pradiksh_BDD_CucumberProject\\src\\main\\java\\Features"
+        features = "C:\\Users\\Pradiksh Soman\\IdeaProjects\\Pradiksh_BDD_CucumberProject\\src\\main\\java\\Features\\Tagging.feature"
         ,glue={"StepDefenitions"}
         ,plugin = {"pretty","html:target/cucumber.html","json:json_output/cucumber.json","junit:junit_xml/cucumber.xml"}
         ,dryRun = false
         ,monochrome=true//display console output in proper format but in new gen its handled already
         ,  publish = false
+        ,tags = "not @End2End and not @SmokeTest and not @RegressionTest"
 )
 public class TestRunner {
 
